@@ -1,5 +1,15 @@
-# Demo - warning: getSession() is potentially insecure
+# Demo - user object warning
 
-There are no `getSession()` calls in my code. In `hooks.server.js`, I'm simply creating a `@supabase/ssr` client and fetching from a table on the server-side.
+> I hijacked a previous warning demo. Hence the `getsession-warning` repo name and verbiage.
 
-Yet, it throws: _"Using supabase.auth.getSession() is potentially insecure as it loads data directly from the storage medium (typically cookies) which may not be authentic. Prefer using supabase.auth.getUser() instead. To suppress this warning call supabase.auth.getUser() before you call supabase.auth.getSession()."_
+There are no references to `session.user`, but it logs this warning five times after a login, or page refresh with a logged-in user:
+
+_"Using the user object as returned from supabase.auth.getSession() or from some supabase.auth.onAuthStateChange() events could be insecure! This value comes directly from the storage medium (usually cookies on the server) and many not be authentic. Use supabase.auth.getUser() instead which authenticates the data by contacting the Supabase Auth server."_
+
+## Test
+```
+git clone https://github.com/j4w8n/getsession-warning.git
+cd getsession-warning
+npm install
+npm run dev
+```
