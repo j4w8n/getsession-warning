@@ -11,5 +11,12 @@ _"Using the user object as returned from supabase.auth.getSession() or from some
 git clone https://github.com/j4w8n/getsession-warning.git
 cd getsession-warning
 npm install
+```
+
+Add your .env.local file with supabase url and anon key.
+
+```
 npm run dev
 ```
+
+Login, and you'll see the server console warning.
