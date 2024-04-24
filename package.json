@@ -18,8 +18,5 @@
   "dependencies": {
     "@supabase/ssr": "^0.3.0",
     "@supabase/supabase-js": "^2.42.5"
-  },
-  "overrides": {
-    "@supabase/auth-js": "2.63.1"
   }
 }
