@@ -15,8 +15,10 @@ npm install
 
 Add your .env.local file with supabase url and anon key.
 
+Server-side login requires you to setup proper redirects in your Supabase dashboard, to `http://localhost:5173/auth/callback`.
+
 ```
 npm run dev
 ```
 
-Login, and you'll see the server console warning.
+Browse to http://localhost:5173, login, and you'll see the session.user warning in the server console.
