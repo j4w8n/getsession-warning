@@ -16,6 +16,13 @@ export const handle = async ({ event, resolve }) => {
   
   event.locals.getSession = async () => {
     const {
+      data: { session },
+    } = await event.locals.supabase.auth.getSession()
+    if (!session) {
+      return { session: null, user: null }
+    }
+    
+    const {
       data: { user },
       error,
     } = await event.locals.supabase.auth.getUser()
@@ -23,15 +30,12 @@ export const handle = async ({ event, resolve }) => {
       return { session: null, user: null }
     }
 
-    const {
-      data: { session },
-    } = await event.locals.supabase.auth.getSession()
     return { session, user }
   }
 
   return resolve(event, {
     filterSerializedResponseHeaders(name) {
-      return name === 'content-range'
+      return name === 'content-range' || name === 'x-supabase-api-version'
     },
   })
 }
