@@ -9,14 +9,14 @@
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "^3.2.0",
-    "@sveltejs/kit": "^2.5.7",
+    "@sveltejs/kit": "^2.5.8",
     "@sveltejs/vite-plugin-svelte": "^3.1.0",
-    "svelte": "^4.2.15",
-    "vite": "^5.2.10"
+    "svelte": "^4.2.16",
+    "vite": "^5.2.11"
   },
   "type": "module",
   "dependencies": {
     "@supabase/ssr": "^0.3.0",
-    "@supabase/supabase-js": "^2.42.7"
+    "@supabase/supabase-js": "^2.43.1"
   }
 }
